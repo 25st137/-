@@ -93,13 +93,13 @@ if (loginBtn) {
 
 
 // ==============================
-// 관리자 데이터 로딩
+// 관리자 데이터 로딩 (세로 테이블)
 // ==============================
 onAuthStateChanged(auth, async (user) => {
 
   const adminBox = document.getElementById("adminBox");
   const loginBox = document.getElementById("loginBox");
-  const tableBody = document.getElementById("tableBody");
+  const tableBodyContainer = document.getElementById("tableBodyContainer");
 
   if (!adminBox) return;
 
@@ -116,24 +116,26 @@ onAuthStateChanged(auth, async (user) => {
 
       const snapshot = await getDocs(q);
 
-      tableBody.innerHTML = "";
+      tableBodyContainer.innerHTML = "";
 
       if (snapshot.empty) {
-        tableBody.innerHTML = "<tr><td colspan='3'>데이터 없음</td></tr>";
+        tableBodyContainer.innerHTML = "<tr><td colspan='3'>데이터 없음</td></trp>지원자가 없습니다.</p>";
         return;
       }
 
       snapshot.forEach(doc => {
         const d = doc.data();
 
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${d.name || ""}</td>
-          <td>${d.major || ""}</td>
-          <td>${d.motivation || ""}</td>
-          <td>${d.skill ?? ""}</td>
+        // 세로 테이블 생성
+        const trable = document.createElement("trable");
+        trable.innerHTML = `
+          <tr><td>이름</td><td>${d.name || ""}</td></tr>
+          <tr><td>학과</td><td>${d.major || ""}</td></tr>
+          <tr><td>지원 동기</td><td>${d.motivation || ""}</td></tr>
+          <tr><td>코딩 경험</td><td>${d.skill ?? ""}</td></tr>
         `;
-        tableBody.appendChild(tr);
+
+        tableBodyContainer.appendChild(trable);
       });
 
     } catch (error) {
