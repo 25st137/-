@@ -30,7 +30,7 @@ body {
   width: 100%;      /* 모바일 화면 100% 폭 */
   max-width: none;  /* 최대 폭 제한 제거 */
   min-height: 100vh; /* 화면 전체 높이 */
-  padding: 30px 20px 80px;
+  padding: 30px 20px 30px;
   box-sizing: border-box;
 }
 
@@ -44,8 +44,8 @@ body {
 }
 
 .pill {
-  padding: 16px 28px;
-  font-size: 18px; /* 버튼 글자 키움 */
+  padding: 24px 40px;
+  font-size: 30px; /* 버튼 글자 키움 */
   border-radius: 40px;
   border: 2px solid #cfcfcf;
   background: #e6e6e6;
@@ -62,7 +62,7 @@ label {
 
 input, textarea {
   width: 100%;
-  font-size: 18px;          /* 입력 글자 키움 */
+  font-size: 20px;          /* 입력 글자 키움 */
   padding: 20px;             /* 내부 여유 조금 증가 */
   border-radius: 35px;
   border: 2px solid #cfcfcf;
@@ -116,7 +116,7 @@ textarea {
   flex-direction: column;
   justify-content: space-between;
   height: 200px;
-  font-size: 25px; /* 슬라이더 레이블 글자 키움 */
+  font-size: 30px; /* 슬라이더 레이블 글자 키움 */
 }
 
 button {
@@ -166,7 +166,7 @@ button {
   padding: 12px;  /* 셀 내부 공간 확보 */
   word-break: break-word;
   vertical-align: top;
-  font-size: 16px; /* 테이블 글자 키움 */
+  font-size: 10px; /* 테이블 글자 키움 */
 }
 
 #tableBody td:first-child {
