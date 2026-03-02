@@ -149,9 +149,6 @@ button{
   opacity:1;
 }
 
-/* =========================
-   데이터 테이블
-========================= */
 #tableBody table {
   border: 1px solid #ccc;
   border-radius: 10px;
