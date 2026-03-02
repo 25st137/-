@@ -130,6 +130,7 @@ onAuthStateChanged(auth, async (user) => {
         tr.innerHTML = `
           <td>${d.name || ""}</td>
           <td>${d.major || ""}</td>
+          <td>${d.motivation || ""}</td>
           <td>${d.skill ?? ""}</td>
         `;
         tableBody.appendChild(tr);
