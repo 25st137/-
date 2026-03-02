@@ -25,7 +25,6 @@ body {
   width: 100%;              /* 모바일 화면 100% 폭 */
   max-width: none;          /* 최대 폭 제한 제거 */
   min-height: 100vh;        /* 화면 전체 높이 */
-  padding: 30px 20px 80px;
   box-sizing: border-box;
 }
 
