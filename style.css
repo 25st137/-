@@ -5,17 +5,17 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%; /* 화면 전체 높이 확보 */
+  height: 100%;
   font-family: sans-serif;
   background: #e6e6e6;
-  font-size: 55px;       /* 전체 글자 크기 증가 */
+  font-size: 55px;       /* 전체 글자 크기 */
   line-height: 1.6;      /* 행간 여유 */
 }
 
 body {
   display: flex;
-  flex-direction: column; /* 세로 스택 */
-  min-height: 140vh;      /* 화면 전체 높이 */
+  flex-direction: column;
+  min-height: 140vh;
 }
 
 /* =========================
@@ -24,46 +24,50 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* 위쪽 정렬 */
-  align-items: stretch;        /* 가로 꽉 채우기 */
+  justify-content: flex-start;
+  align-items: stretch;
   
-  width: 100%;      /* 모바일 화면 100% 폭 */
-  max-width: none;  /* 최대 폭 제한 제거 */
-  min-height: 100vh; /* 화면 전체 높이 */
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
   padding: 30px 20px 30px;
   box-sizing: border-box;
 }
 
 /* =========================
-   기존 스타일 + 글자/간격 조정
+   상단 레이아웃
 ========================= */
 .top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px; /* 위아래 여유 증가 */
+  margin-bottom: 25px;
 }
 
+/* =========================
+   버튼, 라벨, 입력창
+========================= */
 .pill {
   padding: 30px 45px;
-  font-size: 45px; /* 버튼 글자 키움 */
+  font-size: 45px;
   border-radius: 40px;
   border: 2px solid #cfcfcf;
   background: #e6e6e6;
   box-shadow:
     -4px -4px 10px rgba(0,0,0,0.15),
     4px 4px 10px rgba(255,255,255,0.9);
+  margin-bottom: 30px;
 }
 
 label {
-  font-size: 50px;          /* 질문 텍스트 키움 */
-  margin: 30px 0 20px;      /* 질문과 입력창 사이 간격 */
+  font-size: 50px;
+  margin: 30px 0 20px;
   display: block;
 }
 
 input, textarea {
   width: 100%;
-  font-size: 40px;          /* 입력 글자 키움 */
-  padding: 20px;             /* 내부 여유 조금 증가 */
+  font-size: 40px;
+  padding: 20px;
   border-radius: 35px;
   border: 2px solid #cfcfcf;
   background: #e6e6e6;
@@ -71,47 +75,41 @@ input, textarea {
     -4px -4px 10px rgba(0,0,0,0.15),
     4px 4px 10px rgba(255,255,255,0.9);
   outline: none;
-  margin-bottom: 25px;      /* 입력창 간 간격 */
+  margin-bottom: 30px;
 }
 
 textarea {
-  height: 200px;            /* 텍스트 영역 높이 증가 */
+  height: 250px;
 }
 
+/* =========================
+   슬라이더 영역
+========================= */
 .slider-area {
   display: flex;
   align-items: flex-start; /* 위쪽 정렬 */
-  gap: 20px;               /* 슬라이더와 레이블 간격 */
-}
-
-.slider-labels {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* 슬라이더 꼭대기~바닥까지 글자 배치 */
-  height: 200px; /* 슬라이더 높이와 동일하게 */
-  font-size: 30px;
-  line-height: 1; /* 글자 간격 줄이기 */
+  gap: 25px;               /* 슬라이더와 레이블 간격 */
+  margin: 40px 0 60px;
 }
 
 .vertical {
   writing-mode: vertical-lr;
   direction: rtl;
-  width: 16px;
-  height: 200px;
+  width: 25px;
+  height: 250px;
   appearance: none;
-  border-radius: 20px;
+  border-radius: 25px;
   border: 2px solid #cfcfcf;
   background: #e6e6e6;
   box-shadow:
     inset -3px -3px 6px rgba(0,0,0,0.15),
     inset 3px 3px 6px rgba(255,255,255,0.8);
-  margin-right: 25px;
 }
 
 .vertical::-webkit-slider-thumb {
   appearance: none;
-  width: 24px;
-  height: 24px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   border: 2px solid #cfcfcf;
   background: #e6e6e6;
@@ -124,21 +122,25 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 200px;
-  font-size: 40px; /* 슬라이더 레이블 글자 키움 */
+  height: 250px;
+  font-size: 45px;
+  line-height: 1;
 }
 
+/* =========================
+   일반 버튼
+========================= */
 button {
   width: 100%;
-  padding: 28px;   /* 버튼 높이 증가 */
-  font-size: 40px; /* 버튼 글자 키움 */
+  padding: 35px;
+  font-size: 45px;
   border-radius: 50px;
   border: 2px solid #cfcfcf;
   background: #e6e6e6;
   box-shadow:
     -4px -4px 10px rgba(0,0,0,0.15),
     4px 4px 10px rgba(255,255,255,0.9);
-  margin-top: 30px; /* 버튼 위 간격 */
+  margin-top: 35px;
 }
 
 /* =========================
@@ -165,6 +167,9 @@ button {
   opacity: 1;
 }
 
+/* =========================
+   테이블
+========================= */
 #tableBody table {
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -172,10 +177,10 @@ button {
 
 #tableBody td {
   border: 1px solid #eee;
-  padding: 12px;  /* 셀 내부 공간 확보 */
+  padding: 16px;
   word-break: break-word;
   vertical-align: top;
-  font-size: 10px; /* 테이블 글자 키움 */
+  font-size: 12px;
 }
 
 #tableBody td:first-child {
