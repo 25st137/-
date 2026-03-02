@@ -2,50 +2,40 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Co;de 지원 사이트</title>
+<title>지원서</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-  <div class="top">
-    <div class="pill">Co;de 지원 사이트</div>
-    <a href="admin.html" class="pill small">admin</a>
+  <label>1. 학번 / 이름</label>
+  <input type="text" placeholder="ex)10521/전은주">
+
+  <label>2. 희망 학과</label>
+  <input type="text" placeholder="ex) 산업 디자인 학과">
+
+  <label>3. 지원 동기</label>
+  <textarea placeholder="산업디자인 분야로 진로를 희망하여, 디자인을 실제 활용 가능한 형태의 콘텐츠로 확장하고자 지원했습니다. 시각디자인 관점에서 색채와 정보 전달 방식 등에 대해 탐구하고, 이를 기반으로 컴공 부원들과 협업하여 탐구 결과를 실제 웹사이트 작업물로 구현함으로써 ai기술이 빠르게 발전하는 환경에서 디자인 탐구 과정에도 ai 도구를 접목하여 진로와 연계된 융합형 프로젝트를 수행하고 이를 통해 차별화된 활동 기록과 실질적인 문제 해결 경험을 쌓고자 합니다."></textarea>
+
+  <label>4. 코딩 경험</label>
+
+  <div class="slider-area">
+    <input type="range" min="0" max="100" value="0" class="vertical">
+    <div class="slider-labels">
+      <span>언어 1개 이상</span>
+      <span>사이트 배포/API</span>
+      <span>AI 코딩</span>
+      <span>블록코딩</span>
+      <span>아예 모름</span>
+    </div>
   </div>
 
-  <form>
+  <div class="buttons">
+    <button type="button">면접 예상 질문 보기</button>
+    <button type="submit">답변 제출</button>
+  </div>
 
-    <label>1. 학번 / 이름을 입력하세요</label>
-    <input type="text" placeholder="ex)10521/전은주">
-
-    <label>2. 희망 학과를 입력하세요</label>
-    <input type="text" placeholder="ex) 산업 디자인 학과">
-
-    <label>3. 지원 동기를 서술하세요</label>
-    <textarea placeholder="ex) 산업디자인 분야로 진로를 희망하여, 디자인을 실제 활용 가능한 형태의 콘텐츠로 확장하고자 지원했습니다. 시각디자인 관점에서 색채와 정보 전달 방식 등에 대해 탐구하고, 이를 기반으로 컴공 부원들과 협업하여 탐구 결과를 실제 웹사이트 작업물로 구현함으로써 ai기술이 빠르게 발전하는 환경에서 디자인 탐구 과정에도 ai 도구를 접목하여 진로와 연계된 융합형 프로젝트를 수행하고 이를 통해 차별화된 활동 기록과 실질적인 문제 해결 경험을 쌓고자 합니다."></textarea>
-
-    <label>4. 코딩 경험을 뽐내보세요</label>
-
-    <div class="slider-wrapper">
-      <input type="range" min="0" max="100" value="0" class="vertical">
-      <div class="ticks">
-        <span>아예 모름</span>
-        <span>블록코딩 해봄</span>
-        <span>AI로 코딩해봄</span>
-        <span>사이트 배포, API 등</span>
-        <span>언어 1개 이상 할 줄 앎</span>
-      </div>
-    </div>
-
-    <label>5. 수고하셨습니다. 면접 때 만나요 :)</label>
-
-    <div class="bottom">
-      <button type="button">면접 예상 질문 보기</button>
-      <button type="submit">답변 제출</button>
-    </div>
-
-  </form>
 </div>
 
 </body>
