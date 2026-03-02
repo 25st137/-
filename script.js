@@ -127,8 +127,8 @@ onAuthStateChanged(auth, async (user) => {
         const d = doc.data();
 
         // 세로 테이블 생성
-        const trable = document.createElement("trable");
-        trable.innerHTML = `
+        const table = document.createElement("table");
+        table.innerHTML = `
           <tr><td>이름</td><td>${d.name || ""}</td></tr>
           <tr><td>학과</td><td>${d.major || ""}</td></tr>
           <tr><td>지원 동기</td><td>${d.motivation || ""}</td></tr>
