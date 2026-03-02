@@ -80,8 +80,17 @@ textarea {
 
 .slider-area {
   display: flex;
-  align-items: center;
-  margin: 30px 0 30px;      /* 슬라이더 위아래 간격 증가 */
+  align-items: flex-start; /* 위쪽 정렬 */
+  gap: 20px;               /* 슬라이더와 레이블 간격 */
+}
+
+.slider-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 슬라이더 꼭대기~바닥까지 글자 배치 */
+  height: 200px; /* 슬라이더 높이와 동일하게 */
+  font-size: 30px;
+  line-height: 1; /* 글자 간격 줄이기 */
 }
 
 .vertical {
