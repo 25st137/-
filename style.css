@@ -2,154 +2,127 @@ body{
   margin:0;
   background:#e6e6e6;
   font-family:sans-serif;
-  padding:60px;
-  color:#555;
 }
 
 .container{
-  width:700px;
+  width:100%;
+  max-width:480px;
   margin:auto;
+  padding:30px 20px 80px;
 }
-
-/* ===== 상단 버튼 ===== */
 
 .top{
   display:flex;
   justify-content:space-between;
-  margin-bottom:60px;
+  margin-bottom:40px;
 }
 
 .pill{
-  padding:18px 45px;
-  border-radius:50px;
-  border:2px solid #cfcfcf;
-  background:#e6e6e6;
-  text-decoration:none;
-  color:#555;
-  cursor:pointer;
-
-  /* 음영 반전: 위 검정 / 아래 흰색 */
-  box-shadow:
-    -6px -6px 12px rgba(0,0,0,0.15),
-    6px 6px 12px rgba(255,255,255,0.9);
-}
-
-/* ===== 인풋 ===== */
-
-input[type="text"],
-textarea{
-  width:100%;
-  padding:18px 25px;
-  margin-bottom:35px;
+  padding:14px 25px;
+  font-size:16px;
   border-radius:40px;
   border:2px solid #cfcfcf;
   background:#e6e6e6;
-  outline:none;
-
   box-shadow:
-    -6px -6px 12px rgba(0,0,0,0.15),
-    6px 6px 12px rgba(255,255,255,0.9);
+    -4px -4px 10px rgba(0,0,0,0.15),
+    4px 4px 10px rgba(255,255,255,0.9);
+}
+
+label{
+  font-size:17px;
+  margin:25px 0 10px;
+  display:block;
+}
+
+input, textarea{
+  width:100%;
+  font-size:16px;
+  padding:18px;
+  border-radius:35px;
+  border:2px solid #cfcfcf;
+  background:#e6e6e6;
+  box-shadow:
+    -4px -4px 10px rgba(0,0,0,0.15),
+    4px 4px 10px rgba(255,255,255,0.9);
+  outline:none;
 }
 
 textarea{
-  height:220px;
-  border-radius:30px;
-  resize:none;
+  height:180px;
 }
-
-/* ===== textarea 스크롤 ===== */
-
-textarea::-webkit-scrollbar{
-  width:8px;
-}
-
-textarea::-webkit-scrollbar-track{
-  background:#e6e6e6;
-  border-radius:20px;
-  box-shadow:
-    inset -3px -3px 6px rgba(0,0,0,0.15),
-    inset 3px 3px 6px rgba(255,255,255,0.8);
-}
-
-textarea::-webkit-scrollbar-thumb{
-  background:#e6e6e6;
-  border-radius:50%;
-  box-shadow:
-    -4px -4px 8px rgba(0,0,0,0.15),
-    4px 4px 8px rgba(255,255,255,0.9);
-}
-
-/* ===== 세로 슬라이더 ===== */
 
 .slider-area{
   display:flex;
   align-items:center;
-  margin-bottom:60px;
+  margin:30px 0 50px;
 }
 
 .vertical{
   writing-mode: vertical-lr;
   direction: rtl;
-  width:14px;
-  height:260px;
+  width:16px;
+  height:200px;
   appearance:none;
   border-radius:20px;
   border:2px solid #cfcfcf;
   background:#e6e6e6;
-
-  /* 트랙은 파인 느낌 */
   box-shadow:
-    inset -4px -4px 8px rgba(0,0,0,0.15),
-    inset 4px 4px 8px rgba(255,255,255,0.8);
-
-  margin-right:40px;
+    inset -3px -3px 6px rgba(0,0,0,0.15),
+    inset 3px 3px 6px rgba(255,255,255,0.8);
+  margin-right:25px;
 }
 
 .vertical::-webkit-slider-thumb{
   appearance:none;
-  width:22px;
-  height:22px;
+  width:24px;
+  height:24px;
   border-radius:50%;
   border:2px solid #cfcfcf;
   background:#e6e6e6;
-
-  /* 핸들은 튀어나옴 + 반전 */
   box-shadow:
-    -5px -5px 10px rgba(0,0,0,0.15),
-    5px 5px 10px rgba(255,255,255,0.9);
-
-  cursor:pointer;
+    -4px -4px 8px rgba(0,0,0,0.15),
+    4px 4px 8px rgba(255,255,255,0.9);
 }
 
 .slider-labels{
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  height:260px;
-}
-
-/* ===== 하단 버튼 ===== */
-
-.buttons{
-  display:flex;
-  justify-content:space-between;
+  height:200px;
+  font-size:14px;
 }
 
 button{
-  width:48%;
-  padding:18px;
+  width:100%;
+  padding:20px;
+  font-size:18px;
   border-radius:50px;
   border:2px solid #cfcfcf;
   background:#e6e6e6;
-  cursor:pointer;
-
   box-shadow:
-    -6px -6px 12px rgba(0,0,0,0.15),
-    6px 6px 12px rgba(255,255,255,0.9);
+    -4px -4px 10px rgba(0,0,0,0.15),
+    4px 4px 10px rgba(255,255,255,0.9);
 }
 
-button:active{
-  box-shadow:
-    inset -6px -6px 12px rgba(0,0,0,0.15),
-    inset 6px 6px 12px rgba(255,255,255,0.9);
+/* 성공 체크 오버레이 */
+
+#successOverlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:120px;
+  color:white;
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s;
+}
+
+#successOverlay.show{
+  opacity:1;
 }
