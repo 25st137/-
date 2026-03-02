@@ -3,34 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>관리자 페이지</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h2>관리자 로그인</h2>
 
-  <div id="loginBox">
-    <input id="email" placeholder="이메일">
-    <input id="password" type="password" placeholder="비밀번호">
-    <button id="login">로그인</button>
-  </div>
+<h2>관리자 로그인</h2>
 
-  <div id="adminBox" style="display:none;">
-    <h2>지원자 목록</h2>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>학번</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody"></tbody>
-    </table>
-  </div>
+<div id="loginBox">
+  <input id="email" placeholder="이메일">
+  <input id="password" type="password" placeholder="비밀번호">
+  <button id="login">로그인</button>
+</div>
 
-  <script>
-    console.log("스크립트 실행됨");
-  </script>
-  
-  <script type="module" src="script.js"></script>
+<div id="adminBox" style="display:none;">
+  <h2>지원자 목록</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>학과</th>
+        <th>코딩경험</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+</div>
+
+<script type="module" src="js/script.js"></script>
 </body>
 </html>
