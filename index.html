@@ -2,45 +2,46 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Co;de 지원 사이트</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="top-bar">
-      <div class="title-box">Co;de 지원 사이트</div>
-      <a href="admin.html" class="admin-btn">admin</a>
-    </div>
-
-    <label>1. 학번 / 이름을 입력하세요</label>
-    <input id="studentId" placeholder="ex)10521 / 전은주">
-
-    <label>2. 희망 학과를 입력하세요</label>
-    <input id="career" placeholder="ex) 산업 디자인 학과">
-
-    <label>3. 지원 동기를 서술하세요</label>
-    <textarea id="motivation" rows="6"></textarea>
-
-    <label>4. 코딩 경험을 뽐내보세요</label>
-    <div class="checkbox-group">
-      <label><input type="checkbox" value="언어 1개 이상 가능"> 언어 1개 이상 할 줄 앎</label>
-      <label><input type="checkbox" value="사이트 배포/API"> 사이트 배포, API 등</label>
-      <label><input type="checkbox" value="AI로 코딩"> AI로 코딩해봄</label>
-      <label><input type="checkbox" value="블록코딩"> 블록코딩 해봄</label>
-      <label><input type="checkbox" value="아예 모름"> 아예 모름</label>
-    </div>
-
-    <label>5. 수고하셨습니다. 면접 때 만나요 :)</label>
-
-    <div class="button-group">
-      <button class="soft-btn">면접 예상 질문 보기</button>
-      <button id="submit" class="soft-btn">답변 제출</button>
-    </div>
-
+  <div class="top-bar">
+    <div class="title-box">Co;de 지원 사이트</div>
+    <a href="admin.html" class="admin-btn">admin</a>
   </div>
 
-  <script type="module" src="script.js"></script>
+  <label>1. 학번 / 이름을 입력하세요</label>
+  <input id="studentName" placeholder="ex)10521 / 전은주">
+
+  <label>2. 희망 학과를 입력하세요</label>
+  <input id="major" placeholder="ex) 산업 디자인 학과">
+
+  <label>3. 지원 동기를 서술하세요</label>
+  <textarea id="motivation"></textarea>
+
+  <label>4. 코딩 경험을 뽐내보세요</label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" value="언어 1개 이상"> 언어 1개 이상 할 줄 앎</label>
+    <label><input type="checkbox" value="사이트 배포"> 사이트 배포, API 등</label>
+    <label><input type="checkbox" value="AI 코딩"> AI로 코딩해봄</label>
+    <label><input type="checkbox" value="블록코딩"> 블록코딩 해봄</label>
+    <label><input type="checkbox" value="모름"> 아예 모름</label>
+  </div>
+
+  <label>5. 수고하셨습니다. 면접 때 만나요 :)</label>
+
+  <div class="button-group">
+    <button class="soft-btn">면접 예상 질문 보기</button>
+    <button class="soft-btn" id="submit">답변 제출</button>
+  </div>
+
+</div>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
