@@ -99,7 +99,7 @@ onAuthStateChanged(auth, async (user) => {
 
   const adminBox = document.getElementById("adminBox");
   const loginBox = document.getElementById("loginBox");
-  const tableBodyContainer = document.getElementById("tableBodyContainer");
+  const tableBody = document.getElementById("tableBody");
 
   if (!adminBox) return;
 
@@ -116,10 +116,10 @@ onAuthStateChanged(auth, async (user) => {
 
       const snapshot = await getDocs(q);
 
-      tableBodyContainer.innerHTML = "";
+      tableBody.innerHTML = "";
 
       if (snapshot.empty) {
-        tableBodyContainer.innerHTML = "<tr><td colspan='3'>데이터 없음</td></trp>지원자가 없습니다.</p>";
+        tableBody.innerHTML = "<tr><td colspan='3'>데이터 없음</td></trp>지원자가 없습니다.</p>";
         return;
       }
 
@@ -135,7 +135,7 @@ onAuthStateChanged(auth, async (user) => {
           <tr><td>코딩 경험</td><td>${d.skill ?? ""}</td></tr>
         `;
 
-        tableBodyContainer.appendChild(trable);
+        tableBody.appendChild(trable);
       });
 
     } catch (error) {
