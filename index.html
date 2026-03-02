@@ -2,12 +2,17 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>지원서</title>
+<title>Co;de 지원 사이트</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
+
+  <div class="top">
+    <div class="title-pill">Co;de 지원 사이트</div>
+    <a href="admin.html" class="admin-pill">admin</a>
+  </div>
 
   <label>1. 학번 / 이름</label>
   <input type="text" placeholder="ex)10521/전은주">
@@ -21,7 +26,11 @@
   <label>4. 코딩 경험</label>
 
   <div class="slider-area">
-    <input type="range" min="0" max="100" value="0" class="vertical">
+    <div class="slider-wrap">
+      <input type="range" min="0" max="100" step="25" value="0" class="vertical">
+      <div class="tick-lines"></div>
+    </div>
+
     <div class="slider-labels">
       <span>언어 1개 이상</span>
       <span>사이트 배포/API</span>
