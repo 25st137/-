@@ -8,14 +8,14 @@ html, body {
   height: 100%; /* 화면 전체 높이 확보 */
   font-family: sans-serif;
   background: #e6e6e6;
-  font-size: 23px;       /* 전체 글자 크기 증가 */
+  font-size: 40px;       /* 전체 글자 크기 증가 */
   line-height: 1.6;      /* 행간 여유 */
 }
 
 body {
   display: flex;
   flex-direction: column; /* 세로 스택 */
-  min-height: 100vh;      /* 화면 전체 높이 */
+  min-height: 140vh;      /* 화면 전체 높이 */
 }
 
 /* =========================
@@ -40,7 +40,7 @@ body {
 .top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px; /* 위아래 여유 증가 */
+  margin-bottom: 20px; /* 위아래 여유 증가 */
 }
 
 .pill {
