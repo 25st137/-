@@ -1,83 +1,30 @@
-// Firebase SDK
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import {
-  getFirestore,
-  addDoc,
-  collection,
-  getDocs
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+const form = document.getElementById("applyForm");
+const overlay = document.getElementById("successOverlay");
 
-/* =======================
-   Firebase 설정 (통일)
-======================= */
-const firebaseConfig = {
-  apiKey: "AIzaSyAux1RJy_gk6OPEy558Xh48I1gNTmtTv_I",
-  authDomain: "club-application-form.firebaseapp.com",
-  projectId: "club-application-form",
-  storageBucket: "club-application-form.firebasestorage.app",
-  messagingSenderId: "427148856180",
-  appId: "1:427148856180:web:7f90fea3460fa92e0dfa21"
-};
+form.addEventListener("submit", function(e){
+  e.preventDefault();
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-
-/* =======================
-   지원자 제출 (index.html)
-======================= */
-const submitBtn = document.getElementById("submit");
-if (submitBtn) {
-  submitBtn.onclick = async () => {
-    await addDoc(collection(db, "applications"), {
-      name: document.getElementById("name").value,
-      studentId: document.getElementById("studentId").value
-    });
-    alert("제출 완료");
+  const data = {
+    name: document.getElementById("name").value,
+    major: document.getElementById("major").value,
+    motivation: document.getElementById("motivation").value,
+    skill: document.getElementById("skill").value
   };
-}
 
-/* =======================
-   관리자 로그인 (admin.html)
-======================= */
-const loginBtn = document.getElementById("login");
-if (loginBtn) {
-  loginBtn.onclick = async () => {
-    await signInWithEmailAndPassword(
-      auth,
-      document.getElementById("email").value,
-      document.getElementById("password").value
-    );
-  };
-}
+  // 기존 데이터 불러오기
+  let saved = JSON.parse(localStorage.getItem("applications")) || [];
 
-/* =======================
-   관리자 페이지 데이터 로딩
-======================= */
-onAuthStateChanged(auth, async (user) => {
-  const adminBox = document.getElementById("adminBox");
-  const loginBox = document.getElementById("loginBox");
-  const tableBody = document.getElementById("tableBody");
+  // 새 답변 추가
+  saved.push(data);
 
-  if (user && adminBox && tableBody) {
-    loginBox.style.display = "none";
-    adminBox.style.display = "block";
+  // 다시 저장
+  localStorage.setItem("applications", JSON.stringify(saved));
 
-    const snapshot = await getDocs(collection(db, "applications"));
-    snapshot.forEach(doc => {
-      const d = doc.data();
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td>${d.name}</td>
-        <td>${d.studentId}</td>
-      `;
-      tableBody.appendChild(tr);
-    });
-  }
+  // 체크 표시
+  overlay.classList.add("show");
+
+  setTimeout(()=>{
+    overlay.classList.remove("show");
+    form.reset();
+  },2000);
 });
-
