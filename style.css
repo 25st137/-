@@ -44,8 +44,8 @@ body {
 }
 
 .pill {
-  padding: 24px 40px;
-  font-size: 30px; /* 버튼 글자 키움 */
+  padding: 30px 45px;
+  font-size: 40px; /* 버튼 글자 키움 */
   border-radius: 40px;
   border: 2px solid #cfcfcf;
   background: #e6e6e6;
@@ -56,13 +56,13 @@ body {
 
 label {
   font-size: 30px;          /* 질문 텍스트 키움 */
-  margin: 30px 0 15px;      /* 질문과 입력창 사이 간격 */
+  margin: 30px 0 20px;      /* 질문과 입력창 사이 간격 */
   display: block;
 }
 
 input, textarea {
   width: 100%;
-  font-size: 20px;          /* 입력 글자 키움 */
+  font-size: 30px;          /* 입력 글자 키움 */
   padding: 20px;             /* 내부 여유 조금 증가 */
   border-radius: 35px;
   border: 2px solid #cfcfcf;
@@ -81,7 +81,7 @@ textarea {
 .slider-area {
   display: flex;
   align-items: center;
-  margin: 40px 0 60px;      /* 슬라이더 위아래 간격 증가 */
+  margin: 30px 0 30px;      /* 슬라이더 위아래 간격 증가 */
 }
 
 .vertical {
