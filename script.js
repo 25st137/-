@@ -135,7 +135,7 @@ onAuthStateChanged(auth, async (user) => {
           <tr><td>코딩 경험</td><td>${d.skill ?? ""}</td></tr>
         `;
 
-        tableBody.appendChild(trable);
+        tableBody.appendChild(table);
       });
 
     } catch (error) {
