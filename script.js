@@ -123,20 +123,18 @@ onAuthStateChanged(auth, async (user) => {
         return;
       }
 
-      snapshot.forEach(doc => {
-        const d = doc.data();
+     snapshot.forEach(doc => {
+  const d = doc.data();
 
-        // 세로 테이블 생성
-        const table = document.createElement("table");
-        table.innerHTML = `
-          <tr><td>이름</td><td>${d.name || ""}</td></tr>
-          <tr><td>학과</td><td>${d.major || ""}</td></tr>
-          <tr><td>지원 동기</td><td>${d.motivation || ""}</td></tr>
-          <tr><td>코딩 경험</td><td>${d.skill ?? ""}</td></tr>
-        `;
-
-        tableBody.appendChild(table);
-      });
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td>${d.name || ""}</td>
+    <td>${d.major || ""}</td>
+    <td>${d.motivation || ""}</td>
+    <td>${d.skill ?? ""}</td>
+  `;
+  tableBody.appendChild(tr);
+});
 
     } catch (error) {
       console.error("데이터 로딩 실패:", error);
