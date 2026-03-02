@@ -1,66 +1,52 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>동아리 지원</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Co;de 지원 사이트</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="top-bar">
-      <div class="pill">Co;de 지원 사이트</div>
-      <div class="pill small">admin</div>
+  <div class="top">
+    <div class="pill">Co;de 지원 사이트</div>
+    <a href="admin.html" class="pill small">admin</a>
+  </div>
+
+  <form>
+
+    <label>1. 학번 / 이름을 입력하세요</label>
+    <input type="text" placeholder="ex)10521/전은주">
+
+    <label>2. 희망 학과를 입력하세요</label>
+    <input type="text" placeholder="ex) 산업 디자인 학과">
+
+    <label>3. 지원 동기를 서술하세요</label>
+    <textarea placeholder="ex) 산업디자인 분야로 진로를 희망하여, 디자인을 실제 활용 가능한 형태의 콘텐츠로 확장하고자 지원했습니다. 시각디자인 관점에서 색채와 정보 전달 방식 등에 대해 탐구하고, 이를 기반으로 컴공 부원들과 협업하여 탐구 결과를 실제 웹사이트 작업물로 구현함으로써 ai기술이 빠르게 발전하는 환경에서 디자인 탐구 과정에도 ai 도구를 접목하여 진로와 연계된 융합형 프로젝트를 수행하고 이를 통해 차별화된 활동 기록과 실질적인 문제 해결 경험을 쌓고자 합니다."></textarea>
+
+    <label>4. 코딩 경험을 뽐내보세요</label>
+
+    <div class="slider-wrapper">
+      <input type="range" min="0" max="100" value="0" class="vertical">
+      <div class="ticks">
+        <span>아예 모름</span>
+        <span>블록코딩 해봄</span>
+        <span>AI로 코딩해봄</span>
+        <span>사이트 배포, API 등</span>
+        <span>언어 1개 이상 할 줄 앎</span>
+      </div>
     </div>
 
-    <form>
+    <label>5. 수고하셨습니다. 면접 때 만나요 :)</label>
 
-      <label>1. 학번 / 이름을 입력하세요</label>
-      <input type="text" placeholder="ex)10521 / 전은주">
+    <div class="bottom">
+      <button type="button">면접 예상 질문 보기</button>
+      <button type="submit">답변 제출</button>
+    </div>
 
-      <label>2. 희망 학과를 입력하세요</label>
-      <input type="text" placeholder="ex) 산업 디자인 학과">
-
-      <label>3. 지원 동기를 서술하세요</label>
-      <textarea placeholder="ex) 저는 중학교 때부터 코딩에 관심이 많았고,  
-웹사이트를 직접 만들어보며 개발자의 꿈을 키워왔습니다.  
-Co;de 동아리에서 다양한 프로젝트를 경험하며 실력을 키우고 싶습니다."></textarea>
-
-      <label>4. 코딩 경험을 뽐내보세요</label>
-
-      <div class="range-group">
-        <span>언어 1개 이상 할 줄 앎</span>
-        <input type="range" min="0" max="5">
-      </div>
-
-      <div class="range-group">
-        <span>사이트 배포, API 등</span>
-        <input type="range" min="0" max="5">
-      </div>
-
-      <div class="range-group">
-        <span>AI로 코딩해봄</span>
-        <input type="range" min="0" max="5">
-      </div>
-
-      <div class="range-group">
-        <span>블록코딩 해봄</span>
-        <input type="range" min="0" max="5">
-      </div>
-
-      <div class="range-group">
-        <span>아예 모름</span>
-        <input type="range" min="0" max="5">
-      </div>
-
-      <div class="bottom">
-        <button type="button">면접 예상 질문 보기</button>
-        <button type="submit">답변 제출</button>
-      </div>
-
-    </form>
-  </div>
+  </form>
+</div>
 
 </body>
 </html>
