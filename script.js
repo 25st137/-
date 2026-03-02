@@ -123,22 +123,17 @@ onAuthStateChanged(auth, async (user) => {
         return;
       }
 
- snapshot.forEach(doc => {
+snapshot.forEach(doc => {
   const d = doc.data();
 
-  const table = document.createElement("table");
-  table.style.width = "100%";
-  table.style.borderCollapse = "collapse";
-  table.style.marginBottom = "20px";
-
-  table.innerHTML = `
-    <tr><td>이름</td><td>${d.name || ""}</td></tr>
-    <tr><td>학과</td><td>${d.major || ""}</td></tr>
-    <tr><td>지원 동기</td><td>${d.motivation || ""}</td></tr>
-    <tr><td>코딩 경험</td><td>${d.skill ?? ""}</td></tr>
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
+    <td>${d.name || ""}</td>
+    <td>${d.major || ""}</td>
+    <td>${d.motivation || ""}</td>
+    <td>${d.skill ?? ""}</td>
   `;
-
-  tableBody.appendChild(table);
+  tableBody.appendChild(tr);
 });
     } catch (error) {
       console.error("데이터 로딩 실패:", error);
