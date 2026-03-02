@@ -1,85 +1,120 @@
 body {
   margin: 0;
-  background: #e0e0e0;
+  background: #dcdcdc;
   font-family: Arial, sans-serif;
+  color: #555;
 }
 
 .container {
   max-width: 480px;
   margin: auto;
-  padding: 20px;
+  padding: 30px 20px 60px;
 }
 
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
+/* 상단 타이틀 */
 .title-box {
-  padding: 15px 30px;
-  border-radius: 30px;
-  background: #e0e0e0;
-  box-shadow: 6px 6px 12px #bebebe,
-              -6px -6px 12px #ffffff;
+  padding: 16px 40px;
+  border-radius: 40px;
+  background: #dcdcdc;
+  box-shadow:
+    8px 8px 16px #b5b5b5,
+    -8px -8px 16px #ffffff;
+  font-size: 18px;
 }
 
+/* admin 버튼 */
 .admin-btn {
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: #e0e0e0;
-  box-shadow: 6px 6px 12px #bebebe,
-              -6px -6px 12px #ffffff;
-  color: black;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #dcdcdc;
+  box-shadow:
+    8px 8px 16px #b5b5b5,
+    -8px -8px 16px #ffffff;
+  color: #555;
+  font-size: 14px;
 }
 
+/* 질문 라벨 */
 label {
   display: block;
-  margin-top: 25px;
-  margin-bottom: 8px;
+  margin: 30px 0 10px;
+  font-size: 15px;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 20px;
-  background: #e0e0e0;
-  box-shadow: inset 6px 6px 12px #bebebe,
-              inset -6px -6px 12px #ffffff;
-  outline: none;
-}
-
+/* 입력창 */
+input,
 textarea {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #dcdcdc;
+  box-shadow:
+    inset 6px 6px 12px #b5b5b5,
+    inset -6px -6px 12px #ffffff;
+  outline: none;
+  font-size: 14px;
+  color: #555;
+}
+
+/* textarea는 각진 큰 박스 */
+textarea {
+  border-radius: 20px;
+  height: 180px;
   resize: none;
+}
+
+/* 체크박스 영역 */
+.checkbox-group {
+  margin-top: 10px;
 }
 
 .checkbox-group label {
   display: block;
-  margin: 6px 0;
+  margin: 8px 0;
+  font-size: 14px;
 }
 
+/* 버튼 영역 */
 .button-group {
-  margin-top: 30px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
+  gap: 15px;
 }
 
+/* 뉴모피즘 버튼 */
 .soft-btn {
   flex: 1;
-  margin: 5px;
-  padding: 12px;
+  padding: 14px;
   border: none;
-  border-radius: 25px;
-  background: #e0e0e0;
-  box-shadow: 6px 6px 12px #bebebe,
-              -6px -6px 12px #ffffff;
+  border-radius: 35px;
+  background: #dcdcdc;
+  box-shadow:
+    8px 8px 16px #b5b5b5,
+    -8px -8px 16px #ffffff;
   cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  transition: all 0.2s ease;
 }
 
-/* PC 확장 */
+/* 눌림 효과 */
+.soft-btn:active {
+  box-shadow:
+    inset 6px 6px 12px #b5b5b5,
+    inset -6px -6px 12px #ffffff;
+}
+
+/* PC 반응형 */
 @media (min-width: 768px) {
   .container {
     max-width: 800px;
