@@ -11,7 +11,32 @@ body{
   margin:auto;
 }
 
-/* ===== 인풋 ===== */
+/* 상단 */
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:60px;
+}
+
+.title-pill,
+.admin-pill{
+  padding:18px 45px;
+  border-radius:50px;
+  border:2px solid #cfcfcf;
+  background:#e6e6e6;
+  text-decoration:none;
+  color:#555;
+  box-shadow:
+    6px 6px 12px rgba(0,0,0,0.15),
+    -6px -6px 12px rgba(255,255,255,0.9);
+}
+
+.admin-pill{
+  padding:14px 35px;
+}
+
+/* 인풋 */
 
 input[type="text"],
 textarea{
@@ -19,11 +44,9 @@ textarea{
   padding:18px 25px;
   margin-bottom:35px;
   border-radius:40px;
-  border:2px solid #cfcfcf; /* 회색 외곽선 */
+  border:2px solid #cfcfcf;
   background:#e6e6e6;
   outline:none;
-
-  /* 바깥쪽 그림자만 */
   box-shadow:
     6px 6px 12px rgba(0,0,0,0.15),
     -6px -6px 12px rgba(255,255,255,0.9);
@@ -35,18 +58,18 @@ textarea{
   resize:none;
 }
 
-/* ===== 스크롤바 (3번과 동일 디자인) ===== */
+/* textarea 스크롤바 (슬라이더와 동일 톤, 크기 축소) */
 
 textarea::-webkit-scrollbar{
-  width:12px;
+  width:8px;
 }
 
 textarea::-webkit-scrollbar-track{
   background:#e6e6e6;
   border-radius:20px;
   box-shadow:
-    inset 4px 4px 8px rgba(0,0,0,0.15),
-    inset -4px -4px 8px rgba(255,255,255,0.8);
+    inset 3px 3px 6px rgba(0,0,0,0.15),
+    inset -3px -3px 6px rgba(255,255,255,0.8);
 }
 
 textarea::-webkit-scrollbar-thumb{
@@ -57,7 +80,7 @@ textarea::-webkit-scrollbar-thumb{
     -4px -4px 8px rgba(255,255,255,0.9);
 }
 
-/* ===== 세로 슬라이더 ===== */
+/* 세로 슬라이더 */
 
 .slider-area{
   display:flex;
@@ -65,36 +88,71 @@ textarea::-webkit-scrollbar-thumb{
   margin-bottom:60px;
 }
 
+.slider-wrap{
+  position:relative;
+  height:260px;
+  margin-right:40px;
+}
+
 .vertical{
-  -webkit-appearance:none;
-  appearance:none;
+  -webkit-appearance: slider-vertical;
+  appearance: none;
+  writing-mode: vertical-lr;
+  direction: rtl;
   width:14px;
   height:260px;
-  writing-mode: bt-lr;
-  transform: rotate(180deg);
   border-radius:20px;
   border:2px solid #cfcfcf;
   background:#e6e6e6;
+
+  /* 음영 반전 (트랙은 파인 느낌) */
   box-shadow:
     inset 4px 4px 8px rgba(0,0,0,0.15),
     inset -4px -4px 8px rgba(255,255,255,0.8);
-  margin-right:40px;
 }
 
 .vertical::-webkit-slider-thumb{
   -webkit-appearance:none;
-  width:26px;
-  height:26px;
+  width:22px;
+  height:22px;
   border-radius:50%;
   border:2px solid #cfcfcf;
   background:#e6e6e6;
+
+  /* 핸들은 튀어나옴 */
   box-shadow:
     5px 5px 10px rgba(0,0,0,0.15),
     -5px -5px 10px rgba(255,255,255,0.9);
   cursor:pointer;
 }
 
-/* 항목 세로 배열 */
+/* 눈금 */
+
+.tick-lines{
+  position:absolute;
+  left:50%;
+  top:0;
+  width:1px;
+  height:100%;
+  background:transparent;
+}
+
+.tick-lines::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 24%,
+      #aaa 25%,
+      transparent 26%
+    );
+}
+
+/* 항목 세로 */
 
 .slider-labels{
   display:flex;
@@ -103,7 +161,7 @@ textarea::-webkit-scrollbar-thumb{
   height:260px;
 }
 
-/* ===== 버튼 ===== */
+/* 버튼 */
 
 .buttons{
   display:flex;
@@ -117,14 +175,10 @@ button{
   border:2px solid #cfcfcf;
   background:#e6e6e6;
   cursor:pointer;
-
-  /* 알약처럼 튀어나온 입체 */
   box-shadow:
     6px 6px 12px rgba(0,0,0,0.15),
     -6px -6px 12px rgba(255,255,255,0.9);
 }
-
-/* 누르면 들어감 */
 
 button:active{
   box-shadow:
