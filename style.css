@@ -8,7 +8,7 @@ html, body {
   height: 100%; /* 화면 전체 높이 확보 */
   font-family: sans-serif;
   background: #e6e6e6;
-  font-size: 18px;       /* 전체 글자 크기 증가 */
+  font-size: 23px;       /* 전체 글자 크기 증가 */
   line-height: 1.6;      /* 행간 여유 */
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 label {
-  font-size: 20px;          /* 질문 텍스트 키움 */
+  font-size: 30px;          /* 질문 텍스트 키움 */
   margin: 30px 0 15px;      /* 질문과 입력창 사이 간격 */
   display: block;
 }
@@ -116,13 +116,13 @@ textarea {
   flex-direction: column;
   justify-content: space-between;
   height: 200px;
-  font-size: 16px; /* 슬라이더 레이블 글자 키움 */
+  font-size: 25px; /* 슬라이더 레이블 글자 키움 */
 }
 
 button {
   width: 100%;
-  padding: 25px;   /* 버튼 높이 증가 */
-  font-size: 20px; /* 버튼 글자 키움 */
+  padding: 28px;   /* 버튼 높이 증가 */
+  font-size: 30px; /* 버튼 글자 키움 */
   border-radius: 50px;
   border: 2px solid #cfcfcf;
   background: #e6e6e6;
