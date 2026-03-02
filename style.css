@@ -55,7 +55,7 @@ body {
 }
 
 label {
-  font-size: 40px;          /* 질문 텍스트 키움 */
+  font-size: 50px;          /* 질문 텍스트 키움 */
   margin: 30px 0 20px;      /* 질문과 입력창 사이 간격 */
   display: block;
 }
