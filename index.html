@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Co;de 지원 사이트</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>co;de 지원 사이트</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-  <div class="top">
-    <div class="pill">Co;de 지원 사이트</div>
-    <a href="admin.html" class="pill">admin</a>
-  </div>
+  <header>
+    <h1>co;de 지원 사이트</h1>
+    <button class="top-btn">Admin</button>
+  </header>
 
-  <form id="applyForm">
+  <form id="form">
 
-    <label>1. 학번 / 이름</label>
-    <input type="text" id="name" required>
+    <label>1. 이름</label>
+    <input id="name" placeholder="예: 홍길동" required>
 
-    <label>2. 희망 학과</label>
-    <input type="text" id="major" required>
+    <label>2. 지원 동기</label>
+    <textarea id="motivation" placeholder="지원 동기를 구체적으로 작성하세요" required></textarea>
 
-    <label>3. 지원 동기</label>
-    <textarea id="motivation" required></textarea>
-
-    <label>4. 코딩 경험</label>
-
-    <div class="slider-area">
-      <input type="range" min="0" max="100" value="0" id="skill" class="vertical">
-      <div class="slider-labels">
-        <span>언어 1개 이상</span>
-        <span>사이트 배포/API</span>
-        <span>AI 코딩</span>
-        <span>블록코딩</span>
-        <span>아예 모름</span>
-      </div>
+    <div class="slider-wrap">
+      <div class="slider-label">3. 열정도</div>
+      <input type="range" id="passion" min="1" max="10" value="5">
+      <div class="slider-value" id="passionValue">5</div>
     </div>
 
-    <div class="buttons">
-      <button type="submit">답변 제출</button>
+    <div class="slider-wrap">
+      <div class="slider-label">4. 성장 의지</div>
+      <input type="range" id="growth" min="1" max="10" value="5">
+      <div class="slider-value" id="growthValue">5</div>
     </div>
+
+    <button type="submit" class="submit">답변 제출</button>
 
   </form>
 
+  <table>
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>지원동기</th>
+        <th>열정</th>
+        <th>성장의지</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
 </div>
 
-<!-- 제출 성공 체크 -->
-<div id="successOverlay">
-  ✓
-</div>
+<div id="successOverlay" class="overlay">✔</div>
 
 <script src="script.js"></script>
 </body>
