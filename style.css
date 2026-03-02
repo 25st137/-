@@ -126,3 +126,21 @@ button{
 #successOverlay.show{
   opacity:1;
 }
+
+#tableBody table {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#tableBody td {
+  border: 1px solid #eee;
+  padding: 8px;
+  word-break: break-word;
+  vertical-align: top;
+}
+
+#tableBody td:first-child {
+  font-weight: bold;
+  background: #f5f5f5;
+  width: 30%;
+}
