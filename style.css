@@ -1,16 +1,37 @@
-body{
-  margin:0;
-  background:#e6e6e6;
-  font-family:sans-serif;
+/* =========================
+   기본 화면 세팅
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%; /* 화면 전체 높이 확보 */
 }
 
-.container{
-  width:100%;
-  max-width:480px;
-  margin:auto;
-  padding:30px 20px 80px;
+body {
+  display: flex;
+  flex-direction: column; /* 위에서 아래로 쌓이도록 */
+  justify-content: flex-start; /* 화면 위쪽 정렬. 중앙으로 하고싶으면 center */
+  align-items: center; /* 가로 중앙 정렬 */
+  min-height: 100vh;
+  background: #e6e6e6;
+  font-family: sans-serif;
 }
 
+/* =========================
+   컨테이너
+========================= */
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto; /* 가로 중앙 */
+  padding: 30px 20px 80px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   기존 스타일
+========================= */
 .top{
   display:flex;
   justify-content:space-between;
@@ -104,8 +125,9 @@ button{
     4px 4px 10px rgba(255,255,255,0.9);
 }
 
-/* 성공 체크 오버레이 */
-
+/* =========================
+   성공 체크 오버레이
+========================= */
 #successOverlay{
   position:fixed;
   top:0;
@@ -127,6 +149,9 @@ button{
   opacity:1;
 }
 
+/* =========================
+   데이터 테이블
+========================= */
 #tableBody table {
   border: 1px solid #ccc;
   border-radius: 10px;
