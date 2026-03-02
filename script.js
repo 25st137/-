@@ -13,10 +13,10 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 /* =======================
-   Firebase 설정 (통일)
+   Firebase 설정
 ======================= */
 const firebaseConfig = {
-  apiKey: "AIzaSyAux1RJy_gk6OPEy558Xh48I1gNTmtTv_I",
+  apiKey: "YOUR_API_KEY",
   authDomain: "club-application-form.firebaseapp.com",
   projectId: "club-application-form",
   storageBucket: "club-application-form.firebasestorage.app",
@@ -29,52 +29,78 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 /* =======================
-   지원자 제출 (index.html)
+   지원자 제출
 ======================= */
-const submitBtn = document.getElementById("submit");
-if (submitBtn) {
-  submitBtn.onclick = async () => {
+const form = document.getElementById("applyForm");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
     await addDoc(collection(db, "applications"), {
       name: document.getElementById("name").value,
-      studentId: document.getElementById("studentId").value
+      major: document.getElementById("major").value,
+      motivation: document.getElementById("motivation").value,
+      skill: document.getElementById("skill").value,
+      createdAt: new Date()
     });
-    alert("제출 완료");
-  };
+
+    form.reset();
+    document.getElementById("skill").value = 0;
+
+    const overlay = document.getElementById("successOverlay");
+    overlay.classList.add("show");
+    setTimeout(() => {
+      overlay.classList.remove("show");
+    }, 800);
+  });
 }
 
 /* =======================
-   관리자 로그인 (admin.html)
+   관리자 로그인
 ======================= */
 const loginBtn = document.getElementById("login");
+
 if (loginBtn) {
-  loginBtn.onclick = async () => {
-    await signInWithEmailAndPassword(
-      auth,
-      document.getElementById("email").value,
-      document.getElementById("password").value
-    );
-  };
+  loginBtn.addEventListener("click", async () => {
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        document.getElementById("email").value,
+        document.getElementById("password").value
+      );
+    } catch (error) {
+      alert("로그인 실패");
+    }
+  });
 }
 
 /* =======================
-   관리자 페이지 데이터 로딩
+   관리자 데이터 로딩
 ======================= */
 onAuthStateChanged(auth, async (user) => {
+
   const adminBox = document.getElementById("adminBox");
   const loginBox = document.getElementById("loginBox");
   const tableBody = document.getElementById("tableBody");
 
   if (user && adminBox && tableBody) {
+
     loginBox.style.display = "none";
     adminBox.style.display = "block";
 
     const snapshot = await getDocs(collection(db, "applications"));
+
+    tableBody.innerHTML = "";
+
     snapshot.forEach(doc => {
       const d = doc.data();
+
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${d.name}</td>
-        <td>${d.studentId}</td>
+        <td>${d.major}</td>
+        <td>${d.skill}</td>
       `;
       tableBody.appendChild(tr);
     });
